@@ -11,7 +11,7 @@
 
 $link = mysqli_connect('localhost', 'root', 'root','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
 
-$query = "select * from Empleado order by codigo";
+$query = "select * from Empleado order by Codigo_empleado";
 
 $result = mysqli_query($link,$query) or die('Query failed: ' . mysqli_error($link));
 
@@ -26,8 +26,8 @@ echo "\t</tr>\n";
 
 while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
-   $codigo=$line["codigo"];
-   $nombre=$line["nombre"];
+   $codigo=$line["Codigo_empleado"];
+   $nombre=$line["Nombre"];
 
    echo "\t<tr>\n";
    echo "\t\t<td>$codigo</td>\n";
