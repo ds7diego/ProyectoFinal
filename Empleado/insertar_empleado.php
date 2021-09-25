@@ -26,7 +26,7 @@ mysqli_close($link);
 
 
      <center>
-         <a href="index.html">regresar</a>
+         <a href="../index.html">regresar</a>
      </center>
   </body>
 </html>
