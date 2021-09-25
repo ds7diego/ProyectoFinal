@@ -11,8 +11,6 @@
     
 	$codigo=$_GET["codigo"];
 	$nombre=$_GET["nombre"];
-  $horaEntrada=$_GET["horaEntrada"];
-	$horaSalida=$_GET["horaSalida"];
 
 	   echo "<b>Codigo: </b>$codigo<br>\n";
        echo "<input type=hidden name=codigo value=$codigo>\n";

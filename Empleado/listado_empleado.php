@@ -33,8 +33,8 @@ while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
    echo "\t<tr>\n";
    echo "\t\t<td>$codigo</td>\n";
    echo "\t\t<td>$nombre</td>\n";
-   echo "\t\t<td><a href=eliminar.php?codigo=$codigo><div style=\"width:10em; height:2em; width:2em;\"><img style=\"width:10em; height:2em; width:2em;\" src=../Imagenes/edit.png></div></a></td>\n";
-   echo "\t\t<td><a href=modificar_forma.php?codigo=$codigo&nombre=$nombre><div style=\"width:10em; height:2em; width:2em;\"><img style=\"width:10em; height:2em; width:2em;\" src=../Imagenes/delete.png></div></a></td>\n";
+   echo "\t\t<td><a href=eliminar_empleado.php?codigo=$codigo><div style=\"width:10em; height:2em; width:2em;\"><img style=\"width:10em; height:2em; width:2em;\" src=../Imagenes/delete.png></div></a></td>\n";
+   echo "\t\t<td><a href=modificar_empleado.php?codigo=$codigo&nombre=$nombre><div style=\"width:10em; height:2em; width:2em;\"><img style=\"width:10em; height:2em; width:2em;\" src=../Imagenes/edit.png></div></a></td>\n";
    echo "\t\t<td><a href=./../Reporte/reporte_empleado.php?codigo=$codigo><div style=\"width:10em; height:2em; width:2em;\"><img style=\"width:10em; height:2em; width:2em;\" src=../Imagenes/report.png></div></a></td>\n";
    echo "\t</tr>\n";
 }
