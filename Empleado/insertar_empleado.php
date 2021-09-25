@@ -11,10 +11,12 @@
 
 $codigo=$_GET["codigo"];
 $nombre=$_GET["nombre"];
+$jornada=$_GET["jornada"];
+$departamento=$_GET["departamento"];
 
 $link = mysqli_connect('localhost', 'root', '','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
 
-$query = "INSERT INTO Empleado VALUES ($codigo,'$nombre',1)";
+$query = "INSERT INTO Empleado VALUES ($codigo,'$nombre', '$jornada', '$departamento')";
 
 $result = mysqli_query($link,$query) or die('Hubo un error: ' . mysqli_error($link));
 echo 'el registro fue insertado exitosamente<br>';
