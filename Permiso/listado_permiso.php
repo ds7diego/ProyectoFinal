@@ -24,6 +24,7 @@ echo "\t\t<th><b>Codigo permiso</b></th>\n";
 echo "\t\t<th>Empleado</th>\n";
 echo "\t\t<th>fecha</th>\n";
 echo "\t\t<th>motivo</th>\n";
+echo "\t\t<th colspan=\"2\">Acciones</th>\n";
 echo "\t</tr>\n";
 
 while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -44,8 +45,8 @@ while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
    }
    echo "\t\t<td>$fechaPermiso</td>\n";
    echo "\t\t<td>$motivoFalta</td>\n";
-   echo "\t\t<td><a href=eliminar_permiso.php?codigo=$codigo><img src=../Imagenes/icon-remove.png></a></td>\n";
-   echo "\t\t<td><a href=modificar_permiso.php?codigo=$codigo&fechaPermiso=$fechaPermiso&motivoFalta=$motivoFalta><img src=../Imagenes/icon-edit.jpg></a></td>\n";
+   echo "\t\t<td><a href=eliminar_permiso.php?codigo=$codigo><div style=\"width:10em; height:2em; width:2em;\"><img style=\"width:10em; height:2em; width:2em;\" src=../Imagenes/delete.png></div></a></td>\n";
+   echo "\t\t<td><a href=modificar_permiso.php?codigo=$codigo&fechaPermiso=$fechaPermiso&motivoFalta=$motivoFalta><div style=\"width:10em; height:2em; width:2em;\"><img style=\"width:10em; height:2em; width:2em;\" src=../Imagenes/edit.png></div></a></td>\n";
    echo "\t</tr>\n";
 }
 echo "</table>\n";
