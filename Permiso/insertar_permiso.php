@@ -1,32 +1,36 @@
 <html>
-  <head>
-     <title>
-        Insertar permiso
-     </title>
-  </head>
-  <body>
 
+<head>
+    <title>
+        Permiso - Insertar
+    </title>
+</head>
 
-<?php
+<body>
+    <?php
 
-$codigo=$_GET["codigo"];
-$nombre=$_GET["nombre"];
+    echo '<form action="insertar.php" method="get">';
+    echo '<b>Codigo Permiso:</b>';
+    echo '<input type="text" name="codigoPermiso"><br>';
+    echo '<b>Empleado:</b>';
+    echo '<select name="empleado">';
+    echo '<option value="0">Seleccione:</option>';
+    $mysqli = new mysqli('localhost', 'root', '', 'basesproyectofinal');
+   $query = $mysqli -> query ("select * from Empleado order by Codigo_empleado");
+   while ($valores = mysqli_fetch_array($query)) {
+     echo '<option value="'.$valores[Codigo_empleado].'">'.$valores[Nombre].'</option>';
+   }
+   echo '</select><br>';
+   echo '<b>Fecha:</b>';
+   echo '<input type="date" name="fecha" value="<?php echo date(\'Y-m-d\'); ?>" /><br>';
+   echo '<b>Motivo:</b>';
+   echo '<input type="text" name="motivo" length="50"><br>';
+   echo '<input type="submit" name="submit" value="enviar">';     
+   echo '</form>';
+    ?>
+    <center>
+        <a href="../index.html">regresar</a>
+    </center>
+</body>
 
-$link = mysqli_connect('localhost', 'root', '','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
-
-$query = "INSERT INTO Departamento VALUES ($codigo,'$nombre')";
-
-$result = mysqli_query($link,$query) or die('Hubo un error: ' . mysqli_error($link));
-echo 'el registro fue insertado exitosamente<br>';
-
-mysqli_close($link);
-
-
-?>
-
-
-     <center>
-         <a href="../index.html">regresar</a>
-     </center>
-  </body>
 </html>

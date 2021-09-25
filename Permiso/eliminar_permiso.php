@@ -13,7 +13,7 @@ $codigo=$_GET["codigo"];
 
 $link = mysqli_connect('localhost', 'root', '','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
 
-$query = "DELETE FROM Departamento WHERE Codigo_Departamento=$codigo";
+$query = "DELETE FROM Permisos WHERE Codigo_permiso=$codigo";
 
 $result = mysqli_query($link,$query) or die('Query failed: ' . mysqli_error($link));
 
