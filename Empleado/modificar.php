@@ -11,10 +11,12 @@
 
 $codigo=$_POST["codigo"];
 $nombre=$_POST["nombre"];
+$horaEntrada=$_POST["horaEntrada"];
+$horaSalida=$_POST["horaSalida"];
 
 $link = mysqli_connect('localhost', 'root', '','basesproyectofinal') or die('Could not connect: ' . mysql_error());
 
-$query = "UPDATE Departamento SET Nombre_Departamento='$nombre' WHERE Codigo_Departamento=$codigo";
+$query = "UPDATE Jornadas_Laborales SET Nombre_Jornada='$nombre', Hora_entrada = '$horaEntrada', Hora_salida = '$horaSalida' WHERE Codigo_Jornada=$codigo";
 
 $result = mysqli_query($link,$query) or die('Query failed: ' . mysqli_error($link));
 echo "el registro fue modificado exitosamente<br>";
