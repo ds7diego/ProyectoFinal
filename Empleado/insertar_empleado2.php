@@ -2,16 +2,15 @@
   $mysqli = new mysqli('localhost', 'root', '', 'basesproyectofinal');
 ?>
 
-
 <html>
+  <head>
+     <title>
+        Aplicacion de Ejemplo
+     </title>
+  </head>
+  <body>
 
-<head>
-   <title>
-      Empleado - Insertar
-   </title>
-</head>
 
-<body>
    <form action="insertar_empleado.php" method="get">
       <b>Codigo:</b>
       <input type="text" name="codigo"><br>
@@ -23,7 +22,7 @@
          <?php
           $query = $mysqli -> query ("select * from Jornadas_Laborales order by Codigo_Jornada");
           while ($valores = mysqli_fetch_array($query)) {
-            echo '<option value="'.$valores[Codigo_Jornada].'">'.$valores[Codigo_Jornada].'</option>';
+            echo '<option value="'.$valores[Codigo_Jornada].'">'.$valores[Nombre_Jornada].'</option>';
           }
         ?>
       </select><br>
@@ -44,6 +43,6 @@
    <center>
       <a href="../index.html">regresar</a>
    </center>
-</body>
 
+  </body>
 </html>
