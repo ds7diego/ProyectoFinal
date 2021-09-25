@@ -12,7 +12,7 @@
 $codigo=$_GET["codigo"];
 $nombre=$_GET["nombre"];
 
-$link = mysqli_connect('localhost', 'root', 'root','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
+$link = mysqli_connect('localhost', 'root', '','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
 
 $query = "INSERT INTO Empleado VALUES ($codigo,'$nombre',1)";
 

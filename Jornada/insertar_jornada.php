@@ -14,7 +14,7 @@ $nombre=$_GET["nombre"];
 $horaEntrada=$_GET["horaEntrada"];
 $horaSalida=$_GET["horaSalida"];
 
-$link = mysqli_connect('localhost', 'root', 'root','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
+$link = mysqli_connect('localhost', 'root', '','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
 
 $query = "INSERT INTO Jornadas_Laborales VALUES ($codigo,'$nombre','$horaEntrada','$horaSalida')";
 

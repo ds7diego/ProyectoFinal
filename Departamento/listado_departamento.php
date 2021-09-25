@@ -9,7 +9,7 @@
 
 <?php
 
-$link = mysqli_connect('localhost', 'root', 'root','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
+$link = mysqli_connect('localhost', 'root', '','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
 
 $query = "select * from Departamento order by Codigo_Departamento";
 
