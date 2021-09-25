@@ -1,0 +1,26 @@
+<html>
+  <head>
+     <title>
+        Empleado - Marcar
+     </title>
+  </head>
+  <body>
+     <form action="insertar_marca.php" method="get">
+       <b>Codigo:</b>
+       <input type="text" name="codigo"><br>
+       <b>Tipo:</b>
+       <select name="cars" id="cars">
+         <option value="ENTRADA">Entrada</option>
+         <option value="SALIDA">Salida</option>
+       </select><br>
+       <b>Fecha:</b>
+       <input type="date" name="dateFrom" value="<?php echo date('Y-m-d'); ?>" /><br>
+       <b>Hora:</b>
+       <input type="time" name="nombre" length="20"><br>
+       <input type="submit" name="submit" value="enviar">     
+     </form>
+     <center>
+         <a href="../index.html">regresar</a>
+     </center>
+  </body>
+</html>
