@@ -21,8 +21,10 @@ CREATE TABLE Empleado (
 	Codigo_empleado integer not null,
 	Nombre varchar (20),
 	Codigo_Jornada integer,
+	Codigo_Departamento integer,
 	primary key (Codigo_empleado),
 	foreign key (Codigo_Jornada) REFERENCES Jornadas_Laborales (Codigo_Jornada)
+	foreign key (Codigo_Departamento) REFERENCES Departamento (Codigo_Departamento)
 );
 
 CREATE TABLE Permisos (
@@ -32,13 +34,6 @@ CREATE TABLE Permisos (
 	motivo_falta varchar(50),
 	primary key (Codigo_permiso),
 	foreign key (Codigo_empleado) REFERENCES Empleado (Codigo_empleado)
-);
-
-CREATE TABLE Departamento_Empleado (
-	Codigo_Departamento integer not null,
-	Codigo_empleado integer not null,
-	foreign key (Codigo_empleado) REFERENCES Empleado (Codigo_empleado),
-	foreign key (Codigo_Departamento) REFERENCES Departamento (Codigo_Departamento)
 );
 
 CREATE TABLE Marca_Empleado (
