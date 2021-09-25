@@ -40,5 +40,3 @@ CREATE TABLE Departamento_Empleado (
 	foreign key (Codigo_empleado) REFERENCES Empleado (Codigo_empleado),
 	foreign key (Codigo_Departamento) REFERENCES Departamento (Codigo_Departamento)
 );
-
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
