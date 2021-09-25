@@ -32,8 +32,8 @@ while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
    echo "\t<tr>\n";
    echo "\t\t<td>$codigo</td>\n";
    echo "\t\t<td>$nombre</td>\n";
-   echo "\t\t<td><a href=eliminar.php?codigo=$codigo><img src=/imagenes/icon-remove.png></a></td>\n";
-   echo "\t\t<td><a href=modificar_forma.php?codigo=$codigo&nombre=$nombre><img src=/imagenes/icon-edit.jpg></a></td>\n";
+   echo "\t\t<td><a href=eliminar.php?codigo=$codigo><img src=icon-remove.png></a></td>\n";
+   echo "\t\t<td><a href=modificar_forma.php?codigo=$codigo&nombre=$nombre><img src=icon-edit.jpg></a></td>\n";
    echo "\t</tr>\n";
 }
 echo "</table>\n";
