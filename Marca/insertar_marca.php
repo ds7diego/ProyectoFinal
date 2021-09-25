@@ -16,7 +16,7 @@ $hora=$_GET["hora"];
 
 $link = mysqli_connect('localhost', 'root', '','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
 
-$query = "INSERT INTO Marca_Empleado VALUES ($codigo,'$tipo',$fecha, $hora)";
+$query = "INSERT INTO Marca_Empleado VALUES ('$codigo','$tipo','$fecha', '$hora')";
 
 $result = mysqli_query($link,$query) or die('Hubo un error: ' . mysqli_error($link));
 echo 'el registro fue insertado exitosamente<br>';

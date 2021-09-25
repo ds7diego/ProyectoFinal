@@ -42,11 +42,9 @@ CREATE TABLE Departamento_Empleado (
 );
 
 CREATE TABLE Marca_Empleado (
-	Id_marca integer not null,
 	Codigo_empleado integer not null,
 	Tipo_marca varchar(20),
 	Fecha_marca date,
 	Tiempo_marca time,
-	primary key (Id_marca),
 	foreign key (Codigo_empleado) REFERENCES Empleado (Codigo_empleado)
 );
