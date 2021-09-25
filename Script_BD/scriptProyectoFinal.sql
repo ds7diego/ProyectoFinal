@@ -1,3 +1,7 @@
+CREATE DATABASE basesproyectofinal;
+
+USE basesproyectofinal;
+
 CREATE TABLE Departamento (
 	Codigo_Departamento integer not null,
 	Nombre_Departamento varchar(20),
