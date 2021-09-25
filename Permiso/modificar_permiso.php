@@ -8,15 +8,18 @@
      <form action="modificar.php" method="post">
 
 <?php
-    
-	$codigo=$_GET["codigo"];
-	$nombre=$_GET["nombre"];
+  $codigo =  $_GET["codigo"];
+	$fecha=$_GET["fechaPermiso"];
+	$motivoFalta=$_GET["motivoFalta"];
 
-	   echo "<b>Codigo: </b>$codigo<br>\n";
-       echo "<input type=hidden name=codigo value=$codigo>\n";
-       echo "<b>Nombre:</b>\n";
+      echo "<b>Codigo: </b>\n";
+      echo "<input type=text name=codigo value=$codigo><br>\n";
 
-       echo "<input type=text name=nombre value=$nombre length=20><br>\n";
+	     echo "<b>fecha: </b>\n";
+       echo "<input type=date name=fecha value=$fecha\"><br>\n";
+       echo "<b>motivo falta:</b>\n";
+
+       echo "<input type=text name=motivoFalta value=$motivoFalta length=50><br>\n";
 
 ?>
 

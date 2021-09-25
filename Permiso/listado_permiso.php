@@ -11,7 +11,7 @@
 
 $link = mysqli_connect('localhost', 'root', '','basesproyectofinal') or die('Could not connect: ' . mysqli_error());
 
-$query = "select * from Departamento order by Codigo_Departamento";
+$query = "select * from Permisos order by Codigo_Permiso";
 
 $result = mysqli_query($link,$query) or die('Query failed: ' . mysqli_error($link));
 
@@ -20,20 +20,32 @@ $nombre="";
 
 echo "<table border=1>\n";
 echo "\t<tr>\n";
-echo "\t\t<th><b>Codigo</b></th>\n";
-echo "\t\t<th>Nombre</th>\n";
+echo "\t\t<th><b>Codigo permiso</b></th>\n";
+echo "\t\t<th>Empleado</th>\n";
+echo "\t\t<th>fecha</th>\n";
+echo "\t\t<th>motivo</th>\n";
 echo "\t</tr>\n";
 
 while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
-   $codigo=$line["Codigo_Departamento"];
-   $nombre=$line["Nombre_Departamento"];
+   $codigo=$line["Codigo_permiso"];
+   $codigoEmpleado=$line["Codigo_empleado"];
+   $queryEmpleado = "select Nombre from Empleado where Codigo_empleado='$codigoEmpleado'";
+
+   $result = mysqli_query($link,$queryEmpleado) or die('Query failed: ' . mysqli_error($link));   
+   $fechaPermiso=$line["Fecha_permiso"];
+   $motivoFalta=$line["motivo_falta"];
 
    echo "\t<tr>\n";
    echo "\t\t<td>$codigo</td>\n";
-   echo "\t\t<td>$nombre</td>\n";
-   echo "\t\t<td><a href=eliminar_departamento.php?codigo=$codigo><img src=../Imagenes/icon-remove.png></a></td>\n";
-   echo "\t\t<td><a href=modificar_departamento.php?codigo=$codigo&nombre=$nombre><img src=../Imagenes/icon-edit.jpg></a></td>\n";
+   while ($lineEmpleado = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+      $nombreEmpleado = $lineEmpleado["Nombre"];
+      echo "\t\t<td>$nombreEmpleado</td>\n";
+   }
+   echo "\t\t<td>$fechaPermiso</td>\n";
+   echo "\t\t<td>$motivoFalta</td>\n";
+   echo "\t\t<td><a href=eliminar_permiso.php?codigo=$codigo><img src=../Imagenes/icon-remove.png></a></td>\n";
+   echo "\t\t<td><a href=modificar_permiso.php?codigo=$codigo&fechaPermiso=$fechaPermiso&motivoFalta=$motivoFalta><img src=../Imagenes/icon-edit.jpg></a></td>\n";
    echo "\t</tr>\n";
 }
 echo "</table>\n";
